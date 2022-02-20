@@ -1206,13 +1206,6 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@types/yargs@^17.0.8":
-  version "17.0.8"
-  resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-17.0.8.tgz#d23a3476fd3da8a0ea44b5494ca7fa677b9dad4c"
-  integrity sha512-wDeUwiUmem9FzsyysEwRukaEdDNcwbROvQ9QGRKaLI6t+IltNzbn4/i4asmB10auvZGQCzSQ6t0GSczEThlUXw==
-  dependencies:
-    "@types/yargs-parser" "*"
-
 "@typescript-eslint/eslint-plugin@^4.28.2":
   version "4.33.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-4.33.0.tgz#c24dc7c8069c7706bc40d99f6fa87edcb2005276"
@@ -2280,6 +2273,11 @@ dot-prop@^5.2.0:
   integrity sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==
   dependencies:
     is-obj "^2.0.0"
+
+dotenv@^16.0.0:
+  version "16.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.0.0.tgz#c619001253be89ebb638d027b609c75c26e47411"
+  integrity sha512-qD9WU0MPM4SWLPJy/r2Be+2WgQj8plChsyrCNQzW/0WjvcJQiKQJ9mH3ZgB3fxbUUxgc/11ZJ0Fi5KiimWGz2Q==
 
 duplexify@^4.0.0, duplexify@^4.1.1:
   version "4.1.2"
@@ -4313,11 +4311,6 @@ nestjs-command@^3.1.1:
   dependencies:
     lodash.compact "^3.0.1"
     lodash.flattendeep "^4.4.0"
-
-nestjs-fireorm@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/nestjs-fireorm/-/nestjs-fireorm-1.0.4.tgz#88f4e07a1ab2cb5cd55c64a2e7dc9a94facc5fa9"
-  integrity sha512-qG3si0ILdfvefawtp2OrEooVLl4e9ouSEEFmtCRqhMQVYY/xUX6o4NE2fij6rhxToHM65BpjqZvixK94QEIikA==
 
 node-emoji@1.11.0:
   version "1.11.0"

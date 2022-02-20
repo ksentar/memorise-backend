@@ -1,0 +1,8 @@
+{
+    "cSpell.words": [
+        "fireorm",
+        "firestore",
+        "nestjs"
+    ],
+    "typescript.preferences.importModuleSpecifier": "relative"
+}
