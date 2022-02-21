@@ -10,8 +10,8 @@ export class DictionaryApiCommand {
     command: 'dictionary-api:get <word>',
     describe: '',
   })
-  async getJson() {
-    const r = await this.dictionaryService.findAll();
+  async getJson(@Positional({ name: 'word' }) word: string) {
+    const r = await this.dictionaryService.findAll(word);
     console.log(r);
   }
 }
