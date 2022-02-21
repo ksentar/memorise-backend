@@ -12,7 +12,7 @@ export class DictionaryApiService {
         `https://dictionaryapi.com/api/v3/references/spanish/json/${word}?key=b6b6542e-b0e6-4ccc-8a2e-c6c2f0a221dc`,
       );
       const finalNumber = await lastValueFrom(response);
-      console.log(finalNumber.data[0].meta);
+      console.log(finalNumber.data);
     } catch (error) {
       console.error(error);
     }
