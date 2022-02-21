@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
+import { getRepository } from 'fireorm';
+import { User } from '../entities/user.entity';
 
 @Injectable()
 export class UsersService {
-  // constructor(
-  //   @InjectRepository(User)
-  //   private users: BaseFirestoreRepository<User>,
-  // ) {}
-  // async findOne(id: string): Promise<User> {
-  //   return this.users.findById(id);
-  // }
+  async test() {
+    const userRepository = getRepository(User);
+
+    return userRepository.create({ name: '' });
+  }
 }

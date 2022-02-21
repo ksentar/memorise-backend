@@ -15,8 +15,6 @@ export class FirebaseCommand {
 
     console.log(process.env.FIRESTORE_EMULATOR_HOST);
 
-    console.log(await this.firebaseService.test());
-
     console.log('End test');
   }
 }

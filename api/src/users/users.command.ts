@@ -11,7 +11,7 @@ export class UsersCommand {
     describe: '',
   })
   async getUser(@Positional({ name: 'id' }) id: string) {
-    const r = await this.usersService.findOne(id);
+    const r = await this.usersService.test();
     console.log(r);
   }
 }

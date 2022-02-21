@@ -16,10 +16,4 @@ export class FirebaseService {
 
     fireorm.initialize(firestore);
   }
-
-  async test() {
-    const userRepository = getRepository(User);
-
-    return userRepository.create({ name: '' });
-  }
 }
