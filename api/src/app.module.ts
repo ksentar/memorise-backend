@@ -5,9 +5,18 @@ import { AppService } from './app.service';
 import { FirebaseModule } from './firebase/firebase.module';
 import { DictionaryApiModule } from './dictionary-api/dictionary-api.module';
 import { HttpModule } from '@nestjs/axios';
+import { AuthModule } from './auth/auth.module';
+import { FirestoreModule } from './firestore/firestore.module';
 
 @Module({
-  imports: [CommandModule, FirebaseModule, DictionaryApiModule, HttpModule],
+  imports: [
+    CommandModule,
+    FirebaseModule,
+    DictionaryApiModule,
+    HttpModule,
+    AuthModule,
+    FirestoreModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

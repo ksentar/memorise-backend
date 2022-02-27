@@ -19,13 +19,16 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "cli:dev": "node -r ts-node/register -r dotenv/config src/cli.ts"
+    "cli:dev": "node -r ts-node/register -r dotenv/config src/cli.ts",
+    "create-user:dev": "node -r ts-node/register -r dotenv/config src/create-user.ts",
+    "get-user:dev": "node -r ts-node/register -r dotenv/config src/get-user.ts"
   },
   "dependencies": {
     "@nestjs/axios": "^0.0.6",
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
+    "firebase": "^9.6.7",
     "firebase-admin": "^10.0.2",
     "fireorm": "^0.23.3",
     "nestjs-command": "^3.1.1",

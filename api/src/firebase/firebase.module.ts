@@ -1,9 +1,8 @@
 import { Logger, Module, OnModuleInit } from '@nestjs/common';
-import { FirebaseCommand } from './firebase.command';
 import { FirebaseService } from './firebase.service';
 
 @Module({
-  providers: [FirebaseService, FirebaseCommand],
+  providers: [FirebaseService],
 })
 export class FirebaseModule implements OnModuleInit {
   private logger = new Logger(FirebaseModule.name);

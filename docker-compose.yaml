@@ -3,10 +3,24 @@ version: '3'
 services:
   api:
     build: ./docker/node-alpine
+    user: "1000"
+    environment:
+      GCLOUD_PROJECT: ${GCLOUD_PROJECT}    
     volumes:
       - ./api:/app
     tty: true
   
   firebase:
     build: ./docker/firebase
-    tty: true
+    environment:
+      GCLOUD_PROJECT: ${GCLOUD_PROJECT}
+    volumes:
+      - firebase_cache:/root/.cache/firebase/emulators
+    command: firebase emulators:start --project ${GCLOUD_PROJECT}
+    ports:
+      - 4000:4000
+      - 9099:9099
+      - 8090:8090
+
+volumes:
+  firebase_cache:
