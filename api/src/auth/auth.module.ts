@@ -1,8 +1,9 @@
 import { Logger, Module, OnModuleInit } from '@nestjs/common';
+import { AuthCommand } from './auth.command';
 import { AuthService } from './auth.service';
 
 @Module({
-  providers: [AuthService],
+  providers: [AuthService, AuthCommand],
 })
 export class AuthModule implements OnModuleInit {
   private logger = new Logger(AuthModule.name);
