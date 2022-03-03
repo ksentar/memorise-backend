@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Command } from 'nestjs-command';
+import { Command, Positional } from 'nestjs-command';
 import { AuthService } from './auth.service';
 
 @Injectable()
@@ -17,7 +17,7 @@ export class AuthCommand {
   }
 
   @Command({
-    command: 'auth:get-users',
+    command: 'auth:get-user',
     describe: '',
   })
   async getUser() {
@@ -25,14 +25,14 @@ export class AuthCommand {
     await this.authService.getUser();
     console.log('End get-user');
   }
-
+  D;
   @Command({
-    command: 'auth:verify',
+    command: 'auth:verify <token>',
     describe: '',
   })
-  async verify() {
-    console.log('Begin get-user');
-    await this.authService.verify();
-    console.log('End get-user');
+  async verify(@Positional({ name: 'token' }) token: string) {
+    console.log('Begin verify-token');
+    await this.authService.verify(token);
+    console.log('End verify-token');
   }
 }

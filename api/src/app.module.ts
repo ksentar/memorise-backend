@@ -3,7 +3,7 @@ import { CommandModule } from 'nestjs-command';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { FirebaseModule } from './firebase/firebase.module';
-import { DictionaryApiModule } from './dictionary-api/dictionary-api.module';
+import { DictionaryApiModule } from './api/api.module';
 import { HttpModule } from '@nestjs/axios';
 import { AuthModule } from './auth/auth.module';
 import { FirestoreModule } from './firestore/firestore.module';

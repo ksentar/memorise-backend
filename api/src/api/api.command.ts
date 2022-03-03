@@ -1,17 +1,17 @@
 import { Injectable } from '@nestjs/common';
 import { Command, Positional } from 'nestjs-command';
-import { DictionaryApiService } from './dictionary-api.service';
+import { DictionaryApiService } from './api.service';
 
 @Injectable()
 export class DictionaryApiCommand {
   constructor(private dictionaryService: DictionaryApiService) {}
 
   @Command({
-    command: 'dictionary-api:get <word>',
+    command: 'api:get <word>',
     describe: '',
   })
   async getJson(@Positional({ name: 'word' }) word: string) {
-    const r = await this.dictionaryService.findAll(word);
-    console.log(r);
+    const wordDate = await this.dictionaryService.findAll(word);
+    console.log(wordDate);
   }
 }

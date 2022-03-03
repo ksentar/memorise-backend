@@ -8,6 +8,7 @@ COPY firebase.json .
 EXPOSE 9099
 EXPOSE 8090
 EXPOSE 4000
+EXPOSE 44341
 
 VOLUME [ "/root/.cache/firebase/emulators" ]
 

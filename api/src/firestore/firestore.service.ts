@@ -17,7 +17,7 @@ export class FirestoreService {
     const userRepository = getRepository(User);
 
     return userRepository.create({
-      name: ``,
+      name: `jolud`,
     });
   }
 }

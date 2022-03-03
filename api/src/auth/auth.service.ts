@@ -22,12 +22,10 @@ export class AuthService {
 
     console.log(user);
   };
-  verify = async () => {
+  verify = async (token) => {
     admin
       .auth()
-      .verifyIdToken(
-        'eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoiIiwicGljdHVyZSI6IiIsImVtYWlsIjoibWF4QG1hLnJ1IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJhdXRoX3RpbWUiOjE2NDU5NDk3NzcsInVzZXJfaWQiOiJHaFVhNzRENVJOZTQ4MGp0Y2ZkbGlQQ0gxeWdiIiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJtYXhAbWEucnUiXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9LCJpYXQiOjE2NDU5NDk3NzcsImV4cCI6MTY0NTk1MzM3NywiYXVkIjoiZmlyLWJhYjMwIiwiaXNzIjoiaHR0cHM6Ly9zZWN1cmV0b2tlbi5nb29nbGUuY29tL2Zpci1iYWIzMCIsInN1YiI6IkdoVWE3NEQ1Uk5lNDgwanRjZmRsaVBDSDF5Z2IifQ.',
-      )
+      .verifyIdToken(`${token}`)
       .then((decodedToken) => {
         const uid = decodedToken.uid;
         // ...
@@ -40,3 +38,6 @@ export class AuthService {
       });
   };
 }
+
+const token =
+  'eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoiIiwicGljdHVyZSI6IiIsImVtYWlsIjoibWF4QG1hLnJ1IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJhdXRoX3RpbWUiOjE2NDU5NDk3NzcsInVzZXJfaWQiOiJHaFVhNzRENVJOZTQ4MGp0Y2ZkbGlQQ0gxeWdiIiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJtYXhAbWEucnUiXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9LCJpYXQiOjE2NDU5NDk3NzcsImV4cCI6MTY0NTk1MzM3NywiYXVkIjoiZmlyLWJhYjMwIiwiaXNzIjoiaHR0cHM6Ly9zZWN1cmV0b2tlbi5nb29nbGUuY29tL2Zpci1iYWIzMCIsInN1YiI6IkdoVWE3NEQ1Uk5lNDgwanRjZmRsaVBDSDF5Z2IifQ.';

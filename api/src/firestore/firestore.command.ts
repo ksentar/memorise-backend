@@ -12,7 +12,7 @@ export class FirestoreCommand {
   })
   async test() {
     console.log('Begin test');
-
+    console.log(this.firestoreService.test());
     console.log('End test');
   }
 }
