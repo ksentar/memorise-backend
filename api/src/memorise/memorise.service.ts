@@ -11,8 +11,8 @@ export class MemoriseService {
     const r = await this.dictionaryApiService.getTranslate(word);
     await getRepository(MemoriseWord).create({
       word,
-      translate: r.map((v) => v.meta),
-      transcription: `${r.meta}`,
+      translate: r.map((v) => v.shortdef[0]),
+      transcription: `${r[0].hwi.hw}`,
     });
   }
 }

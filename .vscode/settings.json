@@ -3,7 +3,8 @@
         "fireorm",
         "firestore",
         "Memorise",
-        "nestjs"
+        "nestjs",
+        "shortdef"
     ],
     "typescript.preferences.importModuleSpecifier": "relative"
 }

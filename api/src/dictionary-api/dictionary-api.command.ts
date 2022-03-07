@@ -11,6 +11,8 @@ export class DictionaryApiCommand {
     describe: '',
   })
   async test(@Positional({ name: 'word' }) word: string) {
-    await this.dictionaryService.getTranslate(word);
+    const r = await this.dictionaryService.getTranslate(word);
+
+    console.log(r);
   }
 }

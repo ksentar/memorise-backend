@@ -9,11 +9,13 @@ export class DictionaryApiService {
 
   async getTranslate(word: string) {
     const r = await lastValueFrom(
-      this.httpService.get(
+      this.httpService.get<
+        { meta: { id: string }; shortdef: string[]; hwi: { hw: string } }[]
+      >(
         `https://dictionaryapi.com/api/v3/references/spanish/json/${word}?key=${dictionaryApiKey}`,
       ),
     );
-    console.log(r.data);
+
     return r.data;
   }
 }
