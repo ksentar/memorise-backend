@@ -12,7 +12,5 @@ export class AuthModule implements OnModuleInit {
 
   onModuleInit() {
     this.logger.log('Init AuthModule');
-
-    this.authService.init();
   }
 }

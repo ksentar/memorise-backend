@@ -1,26 +1,18 @@
 import { Injectable } from '@nestjs/common';
-import { HttpService } from '@nestjs/axios';
-import { lastValueFrom } from 'rxjs';
-import { dictionaryApiKey } from '../config/configuration';
 import { getRepository } from 'fireorm';
-import { memoriseWord } from '../entities/memoriseWord.entity';
+import { DictionaryApiService } from '../dictionary-api/dictionary-api.service';
+import { MemoriseWord } from '../entities/memorise-word.entity';
 
 @Injectable()
 export class MemoriseService {
-  constructor(private httpService: HttpService) {}
+  constructor(private dictionaryApiService: DictionaryApiService) {}
 
   async memoriseWord(word: string) {
-    const r = await lastValueFrom(
-      this.httpService.get(
-        `https://dictionaryapi.com/api/v3/references/spanish/json/${word}?key=${dictionaryApiKey}`,
-      ),
-    );
-
-    await getRepository(memoriseWord).create({
+    const r = await this.dictionaryApiService.getTranslate(word);
+    await getRepository(MemoriseWord).create({
       word,
-      translate: `${r.data[0].shortdef}`,
-      translate2: `${r.data[1].shortdef}, ${r.data[2].shortdef} `,
-      transcription: `${r.data[0].hwi.prs[0].mw}`,
+      translate: r.map((v) => v.meta),
+      transcription: `${r.meta}`,
     });
   }
 }

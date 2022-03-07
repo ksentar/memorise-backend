@@ -6,5 +6,6 @@ import { DictionaryApiService } from './dictionary-api.service';
 @Module({
   imports: [HttpModule],
   providers: [DictionaryApiService, DictionaryApiCommand],
+  exports: [DictionaryApiService],
 })
 export class DictionaryApiModule {}

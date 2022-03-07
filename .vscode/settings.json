@@ -2,6 +2,7 @@
     "cSpell.words": [
         "fireorm",
         "firestore",
+        "Memorise",
         "nestjs"
     ],
     "typescript.preferences.importModuleSpecifier": "relative"

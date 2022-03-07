@@ -1,10 +1,9 @@
 import { Collection } from 'fireorm';
 
 @Collection()
-export class memoriseWord {
+export class MemoriseWord {
   id: string;
   word: string;
-  translate: string;
-  translate2: any;
+  translate: string[];
   transcription: string;
 }
