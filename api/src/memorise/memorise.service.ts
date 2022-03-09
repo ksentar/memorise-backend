@@ -10,9 +10,22 @@ export class MemoriseService {
   async memoriseWord(word: string) {
     const r = await this.dictionaryApiService.getTranslate(word);
     await getRepository(MemoriseWord).create({
-      word,
-      translate: r.map((v) => v.shortdef[0]),
-      transcription: `${r[0].hwi.hw}`,
+      homographs: [
+        {
+          meta: r[0].meta,
+          hwi_hw: r[0].hwi.hw,
+          fl: r[0].fl,
+          shortdef: r[0].shortdef[0],
+        },
+        {
+          meta: r[1].meta,
+          hwi_hw: r[1].hwi.hw,
+          fl: r[1].fl,
+          shortdef: r[1].shortdef[0],
+        },
+      ],
+      id: `${word}`,
     });
+    console.log(`${word} added to firebase`);
   }
 }

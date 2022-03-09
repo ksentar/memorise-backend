@@ -10,7 +10,12 @@ export class DictionaryApiService {
   async getTranslate(word: string) {
     const r = await lastValueFrom(
       this.httpService.get<
-        { meta: { id: string }; shortdef: string[]; hwi: { hw: string } }[]
+        {
+          meta: { id: string };
+          shortdef: string[];
+          hwi: { hw: string; prs: string };
+          fl: string;
+        }[]
       >(
         `https://dictionaryapi.com/api/v3/references/spanish/json/${word}?key=${dictionaryApiKey}`,
       ),
